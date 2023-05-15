@@ -1,29 +1,11 @@
-import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./navigators/RootNavigator";
 
-import LittleLemonHeader from './components/LittleLemonHeader';
-import LittleLemonFooter from './components/LittleLemonFooter';
-import WelcomeScreen from './WelcomeScreen';
-import LoginScreen from './LoginScreen';
-
+// App.js is already setup by wrapping NavigationContainer around Root Navigator
 export default function App() {
   return (
-    <>
-        <View style={styles.container}>
-          <LittleLemonHeader />
-        </View>
-        <View style={styles.footerContainer}>
-          <LittleLemonFooter />
-        </View>
-    </>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333333',
-  },
-  footerContainer: { backgroundColor: '#333333' },
-});   
-
